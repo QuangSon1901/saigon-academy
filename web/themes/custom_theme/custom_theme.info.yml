@@ -1,0 +1,26 @@
+name: Custom theme
+type: theme
+description: Custom Theme For Saigon Academy
+package: Theme
+core_version_requirement: ^9 || ^10
+
+libraries: 
+ - custom_theme/global-styling
+
+base theme: claro
+
+regions:
+  pre_header: Pre-header
+  header: Header
+  highlighted: Highlighted
+  tabs: Tabs
+  banner_top: 'Banner Top'
+  breadcrumbs: Breadcrumbs
+  page_title: 'Page Title'
+  content: Content
+  sidebar: Sidebar
+  content_bottom: 'Content Bottom'
+  footer: Footer
+  bottom: Bottom
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
