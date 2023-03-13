@@ -1,0 +1,10 @@
+<?php
+
+function custom_pre_header_theme($existing, $type, $theme, $path)
+{
+    return [
+        'views_custom_pre_header' => [
+            'file' => 'custom_pre_header.theme.inc'
+        ]
+    ];
+}

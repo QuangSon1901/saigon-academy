@@ -1,0 +1,5 @@
+custom_pre_header:
+  version: 1.0
+  dependencies:
+    - core/jquery
+    - core/drupal

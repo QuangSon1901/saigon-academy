@@ -1,0 +1,12 @@
+{%
+  set classes = [
+    'region',
+    'region-' ~ region|clean_class,
+    'flex items-center justify-between h-[70px]'
+  ]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    {{ content }}
+  </div>
+{% endif %}

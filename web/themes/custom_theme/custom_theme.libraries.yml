@@ -3,5 +3,7 @@ global-styling:
   js:
     js/main.js: {}
   css:
+    base:
+      dist/tailwind.css: {}
     theme:
       css/style.css: {}

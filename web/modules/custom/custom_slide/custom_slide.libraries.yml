@@ -1,0 +1,13 @@
+custom_slide:
+  version: 1.0
+  dependencies:
+    - core/jquery
+    - core/drupal
+  js:
+    slick/slick.min.js: {}
+    js/script.js: {}
+  css:
+    theme:
+      slick/slick.css: {}
+      slick/slick-theme.css: {}
+      css/style.css: {}

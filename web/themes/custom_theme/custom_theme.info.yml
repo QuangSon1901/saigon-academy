@@ -10,7 +10,9 @@ libraries:
 base theme: claro
 
 regions:
-  pre_header: Pre-header
+  pre_header_left: Pre-header-left
+  pre_header_center: Pre-header-center
+  pre_header_right: Pre-header-right
   header: Header
   highlighted: Highlighted
   tabs: Tabs
