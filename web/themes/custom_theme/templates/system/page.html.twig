@@ -1,84 +1,105 @@
-<div>
-  <header role="banner">
-    <div class="flex items-center bg-primary text-secondary h-[30px]">
-      <div class="container mx-auto">
-        <div class="pre-header flex items-center justify-between">
-            {{ page.pre_header_left }}
-            {{ page.pre_header_center }}
-            {{ page.pre_header_right }}
+<div class="pt-100px">
+    <header role="banner" class="fixed top-0 right-0 left-0 z-20 bg-white">
+        <div class="flex items-center bg-primary text-secondary h-[30px]">
+            <div class="container mx-auto">
+                <div class="pre-header flex items-center justify-between">
+                    {{ page.pre_header_left }}
+                    {{ page.pre_header_center }}
+                    {{ page.pre_header_right }}
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-      <div class="container mx-auto">
-        {% if page.header|render|striptags|trim is not empty %}
-          {{ page.header }}
-        {% endif %}
-      </div>
-  </header>
+        <div class="container mx-auto">
+            {% if page.header|render|striptags|trim is not empty %}
+            {{ page.header }}
+            {% endif %}
+        </div>
+    </header>
 
     <div class="layout-highlighted">
-      <div class="container mx-auto">
-        {{ page.highlighted }}
-      </div>
+        <div class="container mx-auto">
+            {{ page.highlighted }}
+        </div>
     </div>
 
-  <div class="layout-tabs">
-    <div class="container mx-auto">
-      {{ page.tabs }}
+    <div class="layout-tabs">
+        <div class="container mx-auto">
+            {{ page.tabs }}
+        </div>
     </div>
-  </div>
 
     <div class="layout-banner-top">
-      {{ page.banner_top }}
+        {{ page.banner_top }}
     </div>
 
-  <div class="layout-breadcrumbs">
-    <div class="container mx-auto">
-      {{ page.breadcrumbs }}
+    <div class="layout-breadcrumbs">
+        <div class="container mx-auto">
+            {{ page.breadcrumbs }}
+        </div>
     </div>
-  </div>
 
-      <div class="layout-page-title">
+    <div class="layout-intro">
+        {{ page.intro }}
+    </div>
+
+    <div class="layout-page-title">
         {% if is_front %}
-          <div class="is-front container mx-auto">
+        <div class="is-front container mx-auto">
             {{ page.page_title }}
-          </div>
-          {% else %}
-          <div class="container mx-auto">
+        </div>
+        {% else %}
+        <div class="container mx-auto">
             {{ page.page_title }}
-          </div>
+        </div>
         {% endif %}
-      </div>
+    </div>
 
-  <main role="main" class="main container mx-auto">
+    <main role="main" class="main container mx-auto">
 
-    <div class="layout-content">
-      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-      {{ page.content }}
-    </div>{# /.layout-content #}
+        <div class="layout-content">
+            <a id="main-content" tabindex="-1"></a>
+            {{ page.content }}
+        </div>
 
-      <aside class="layout-sidebar" role="complementary">
-        {{ page.sidebar }}
-      </aside>
+        <aside class="layout-sidebar" role="complementary">
+            {{ page.sidebar }}
+        </aside>
 
-  </main>
+    </main>
 
     <div class="layout-content-bottom">
-      {{ page.content_bottom }}
+        {{ page.content_bottom }}
     </div>
 
-  <div class="layout-footer">
-    <footer class="footer" role="contentinfo">
-      <div class="container mx-auto">
-        {{ page.footer }}
-      </div>
-    </footer>
-  </div>
+    <div class="layout-footer">
+        <footer class="footer" role="contentinfo">
+            <div>
+                {{ page.footer }}
+            </div>
+        </footer>
+    </div>
 
     <div class="layout-bottom">
-      <div class="container mx-auto">
-        {{ page.bottom }}
-      </div>
+        <div>
+            {{ page.bottom }}
+        </div>
     </div>
 
-</div>{# /.layout-container #}
+    <button id="scroll-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" class="scroll-circle svg-content" width="14" height="14" viewBox="0 0 14 14" fill="#ffffff"><path d="M13.1211 7.84766H1.8418L7.26172 13.2676L6.61719 13.9121L0.142578 7.4082L6.61719 0.933594L7.26172 1.54883L1.8418 6.96875H13.1211V7.84766Z" fill="#ffffff"/><script xmlns=""/></svg>
+    </button>
+
+    <div id="loadingPage" class="fixed inset-0 z-20">
+        <div class="grid h-full w-full grid-cols-1">
+            <div class="line bg-white"></div>
+            <div class="line bg-white"></div>
+            <div class="line bg-white"></div>
+            <div class="line bg-white"></div>
+            <div class="line bg-white"></div>
+        </div>
+        <div class="logo-loading absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+            <img src="http://localhost:8888/themes/custom_theme/logo.svg" alt="" />
+        </div>
+    </div>
+
+</div>

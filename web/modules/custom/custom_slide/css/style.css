@@ -25,3 +25,12 @@
 .custom-next:hover {
     cursor: pointer;
 }
+
+.nguyen-hoang-group-slider .custom-prev,
+.nguyen-hoang-group-slider .custom-next {
+    display: none !important;
+}
+
+.nguyen-hoang-group-slider img {
+    margin: 0 auto;
+}

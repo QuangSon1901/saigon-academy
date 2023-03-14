@@ -30,7 +30,7 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu flex items-center !list-none space-x-6 h-full') }}>
+      <ul{{ attributes.addClass('hidden menu xl:flex items-center !list-none space-x-6 h-full') }}>
     {% else %}
       <ul class="menu flex !list-none flex-col z-10 absolute w-max !ml-0 bg-primary text-secondary !p-[6px] rounded-md text-[18px] top-[120%] opacity-0 invisible transition-all">
     {% endif %}
@@ -47,8 +47,9 @@
         {%
           set linkClasses = [
             'block px-2 py-1 h-full flex items-center',
-            menu_level == 0 ? 'justify-center after:absolute after:flex after:h-1 after:w-0 after:bg-primary after:bottom-0 hover:after:w-full after:transition-all after:duration-300 after:ease' : 'hover:text-secondary hover:bg-hover transition-all',
-            item.is_collapsed ? 'menu-item--collapsed',
+            menu_level == 0 ? 'justify-center after:absolute after:flex after:h-1 after:w-0 after:bg-primary after:bottom-0 hover:after:w-full after:transition-all after:duration-300 after:ease' : 'hover:text-secondary hover:bg-hover transition-all !text-white !inline-block !w-full',
+            item.is_collapsed ? 'pointer-events-none cursor-pointer',
+            item.is_expanded ? 'pointer-events-none cursor-pointer',
             item.in_active_trail ? 'after:!w-full !text-primary',
           ]
         %}

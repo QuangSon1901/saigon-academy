@@ -17,6 +17,7 @@ regions:
   highlighted: Highlighted
   tabs: Tabs
   banner_top: 'Banner Top'
+  intro: 'Intro'
   breadcrumbs: Breadcrumbs
   page_title: 'Page Title'
   content: Content

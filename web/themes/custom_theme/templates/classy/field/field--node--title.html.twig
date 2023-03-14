@@ -30,15 +30,15 @@
 {% else %}
 {%
   set classes = [
-    'field',
+    'field h-[150px] text-5xl font-extrabold !text-white z-10 relative',
     'field--name-' ~ field_name|clean_class,
     'field--type-' ~ field_type|clean_class,
     'field--label-' ~ label_display,
   ]
 %}
-<span{{ attributes.addClass(classes) }}>
+<h1{{ attributes.addClass(classes) }}>
   {%- for item in items -%}
     {{ item.content }}
   {%- endfor -%}
-</span>
+</h1>
 {% endif %}

@@ -1,0 +1,5 @@
+custom_view_intro:
+  version: 1.0
+  dependencies:
+    - core/jquery
+    - core/drupal

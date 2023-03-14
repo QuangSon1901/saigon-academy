@@ -8,5 +8,8 @@
 {% if content %}
   <div{{ attributes.addClass(classes) }}>
     {{ content }}
+    <button id="sidebar-toggle" class="block xl:hidden">
+      <svg class="svg-icon" style="width: 2.2rem; height: 2.2rem;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M141.93 191.76h740.15v48H141.93zM141.93 495.28h740.15v48H141.93zM141.93 798.8h740.15v48H141.93z"  /></svg>
+    </button>
   </div>
 {% endif %}

@@ -1,0 +1,10 @@
+<?php
+
+function custom_view_background_theme($existing, $type, $theme, $path)
+{
+    return [
+        'views_custom_view_background' => [
+            'file' => 'custom_view_background.theme.inc'
+        ]
+    ];
+}
