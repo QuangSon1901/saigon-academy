@@ -1,0 +1,10 @@
+<?php
+
+function custom_view_contact_theme($existing, $type, $theme, $path)
+{
+    return [
+        'views_custom_view_contact' => [
+            'file' => 'custom_view_contact.theme.inc'
+        ]
+    ];
+}

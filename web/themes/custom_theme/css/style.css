@@ -74,8 +74,8 @@ html ::-webkit-scrollbar-track {
 
 .why-choose-block-column img {
     margin: 0 auto;
-    width: 350px;
-    height: 350px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 16px solid #fff;
     object-fit: cover;
@@ -109,6 +109,35 @@ html ::-webkit-scrollbar-track {
     background-color: #fff;
     -webkit-box-shadow: 0.68px 12.982px 29px 0 rgb(0 0 0 / 7%);
     box-shadow: 0.68px 12.982px 29px 0 rgb(0 0 0 / 7%);
+}
+
+.box-shadow-style {
+    border: none;
+    border-radius: 6px;
+    background-color: #fff;
+    -webkit-box-shadow: 0.68px 12.982px 29px 0 rgb(0 0 0 / 7%);
+    box-shadow: 0.68px 12.982px 29px 0 rgb(0 0 0 / 7%);
+}
+
+.transition-cubic-style {
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+
+.admissions-item:hover .transition-cubic-style {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
 
 .news-home .views-col>.col-style img {
@@ -268,7 +297,7 @@ html ::-webkit-scrollbar-track {
     visibility: unset;
 }
 
-.banner-image > img {
+.banner-image>img {
     height: 300px;
 }
 
@@ -281,6 +310,42 @@ html ::-webkit-scrollbar-track {
     height: auto;
 }
 
-.node--type-introduce .layout {
+.node .layout {
     padding-bottom: 50px;
+}
+
+.our-card:hover img {
+    transform: translateY(0);
+}
+
+.our-card:hover .btn-more::after {
+    opacity: 1;
+    width: 100%;
+    background-color: #88191c;
+}
+
+.our-card:hover .btn-more .btn-more-span {
+    opacity: 1;
+    visibility: unset;
+}
+
+.node--type-news .layout--onecol:nth-child(2) .layout__region--content,
+.node--type-admissions .layout--onecol:nth-child(2) .layout__region--content {
+    display: flex;
+}
+
+.node--type-news .layout--onecol:nth-child(2) .layout__region--content>*+*,
+.node--type-admissions .layout--onecol:nth-child(2) .layout__region--content>*+* {
+    margin-left: 60px;
+}
+
+
+.breadcrumb__item+.breadcrumb__item::before {
+    display: inline-block;
+    padding: 0 0.75rem;
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' height='8' width='5'%3e%3cpath fill='currentColor' d='M1.207.647L.5 1.354 3.146 4 .5 6.647l.707.707L4.561 4z'/%3e%3c/svg%3e");
+}
+
+.language-switcher-language-url .links .is-active {
+    display: none !important;
 }

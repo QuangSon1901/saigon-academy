@@ -1,0 +1,10 @@
+<?php
+
+function custom_view_admissions_theme($existing, $type, $theme, $path)
+{
+    return [
+        'views_custom_view_admissions' => [
+            'file' => 'custom_view_admissions.theme.inc'
+        ]
+    ];
+}

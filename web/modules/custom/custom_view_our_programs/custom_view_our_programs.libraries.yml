@@ -1,0 +1,5 @@
+custom_view_our_programs:
+  version: 1.0
+  dependencies:
+    - core/jquery
+    - core/drupal
