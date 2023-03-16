@@ -6,10 +6,10 @@
             setTimeout(() => {
                 loadingPage.addClass('close')
                 $('body').css('overflow-y', 'overlay')
-            }, 3000)
+            }, 1000)
             setTimeout(() => {
                 loadingPage.css('display', 'none')
-            }, 4000)
+            }, 2000)
 
             // 
             const scrollToTopBtn = $("#scroll-to-top");
@@ -63,13 +63,13 @@
 
             isElInViewPort = (el) => {
                 let rect = el.getBoundingClientRect()
-                let distance = 50
+                let distance = 0
                 return rect.top <= (window.innerHeight - distance || document.documentElement.clientHeight - distance)
             }
 
             isElOutViewPort = (el) => {
                 let rect = el.getBoundingClientRect()
-                let distance = 50
+                let distance = 0
                 return rect.top > (window.innerHeight - distance || document.documentElement.clientHeight - distance)
             }
 

@@ -1,0 +1,23 @@
+<div class="custom_view_news py-[50px]">
+  <div class="grid grid-cols-4 gap-8">
+        {% for row in rows %}
+            {% set node = row['#row'] %}
+            {% set image_url = file_url(node._entity.field_image_news.entity.fileuri) %}
+            <a href="{{  url('entity.node.canonical', {'node': node.nid})  }}"  class="box-shadow-style cursor-pointer">
+                <div>
+                    <div class="relative">
+                        <img src="{{image_url}}" alt="" class="w-[360px] h-[360px] rounded-md object-cover"/>
+                    </div>
+                    <div class="p-5">
+                        <div>
+                            <h1 class="h-[84px] text-xl font-medium mb-6">{{node._entity.title.value}}</h1>
+                        </div>
+                        <div class="h-1 bg-thirst w-16 mb-2"></div>
+                        <div style="display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;" class="text-black overflow-hidden font-normal">{{node._entity.field_intro_news.value}}</div>
+                        <button class="relative mt-3 h-[42px] text-white flex items-center font-medium rounded-full p-[13px] bg-primary">Read More</button>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+  </div>
+</div>

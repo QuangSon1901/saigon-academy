@@ -13,6 +13,7 @@ regions:
   pre_header_left: Pre-header-left
   pre_header_center: Pre-header-center
   pre_header_right: Pre-header-right
+  change_language: Change-language
   header: Header
   highlighted: Highlighted
   tabs: Tabs

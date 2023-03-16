@@ -6,8 +6,9 @@
             <div class="!bg-center !bg-no-repeat !bg-cover !w-full !pt-[540px] relative" style="background-image: url({{image_url}}) !important;">
                 <div class="grid grid-cols-1 lg:grid-cols-2 absolute inset-0 z-10 pt-20 pb-24 container mx-auto">
                     <div class="h-full flex flex-col justify-center to-right show-on-scroll">
-                        <h1 class="text-4xl text-primary font-bold mb-6">{{node._entity.field_title.value}}</h1>
-                        <p class="text-xl pl-8 border-l-4 border-primary">{{node._entity.field_content.value}}</p>
+                        {% set langCode = node.block_content_field_data_langcode %}
+                        <h1 class="text-4xl text-primary font-bold mb-6">{{ node._entity.getTranslation(langCode).field_title.value }}</h1>
+                        <p class="text-xl pl-8 border-l-4 border-primary">{{node._entity.getTranslation(langCode).field_content.value}}</p>
                     </div>
                 </div>
             </div>

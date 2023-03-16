@@ -1,0 +1,10 @@
+<?php
+
+function custom_view_news_theme($existing, $type, $theme, $path)
+{
+    return [
+        'views_custom_view_news' => [
+            'file' => 'custom_view_news.theme.inc'
+        ]
+    ];
+}
