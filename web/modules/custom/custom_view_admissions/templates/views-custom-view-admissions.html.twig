@@ -1,5 +1,5 @@
 <div class="custom_view_admissions py-[50px]">
-  <div class="grid grid-cols-2 gap-8">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {% for row in rows %}
             {% set node = row['#row'] %}
             {% set image_url = file_url(node._entity.field_image_admissions.entity.fileuri) %}

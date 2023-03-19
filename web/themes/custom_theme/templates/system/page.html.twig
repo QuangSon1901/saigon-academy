@@ -1,7 +1,7 @@
 <div class="pt-100px">
     <header role="banner" class="fixed top-0 right-0 left-0 z-20 bg-white">
         <div class="flex items-center bg-primary text-secondary h-[30px]">
-            <div class="container mx-auto">
+            <div class="px-3 md:px-0 container mx-auto">
                 <div class="pre-header flex items-center justify-between">
                     <div>{{ page.pre_header_left }}</div>
                     <div>{{ page.pre_header_center }}</div>
@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-        <div class="container mx-auto">
+        <div class="px-3 md:px-0 container mx-auto">
             {% if page.header|render|striptags|trim is not empty %}
             {{ page.header }}
             {% endif %}
@@ -20,13 +20,13 @@
     </header>
 
     <div class="layout-highlighted">
-        <div class="container mx-auto">
+        <div class="px-3 md:px-0 container mx-auto">
             {{ page.highlighted }}
         </div>
     </div>
 
     <div class="layout-tabs">
-        <div class="container mx-auto">
+        <div class="px-3 md:px-0 container mx-auto">
             {{ page.tabs }}
         </div>
     </div>
@@ -36,7 +36,7 @@
     </div>
 
     <div class="layout-breadcrumbs">
-        <div class="container mx-auto">
+        <div class="px-3 md:px-0 container mx-auto">
             {{ page.breadcrumbs }}
         </div>
     </div>
@@ -51,13 +51,13 @@
             {{ page.page_title }}
         </div>
         {% else %}
-        <div class="container mx-auto">
+        <div class="px-3 md:px-0 container mx-auto">
             {{ page.page_title }}
         </div>
         {% endif %}
     </div>
 
-    <main role="main" class="main container mx-auto">
+    <main role="main" class="main px-3 md:px-0 container mx-auto">
 
         <div class="layout-content">
             <a id="main-content" tabindex="-1"></a>

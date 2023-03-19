@@ -3,12 +3,12 @@
         {% for row in rows %}
             {% set node = row['#row'] %}
             {% set image_url = file_url(node._entity.field_background_image.entity.fileuri) %}
-            <div class="!bg-center !bg-no-repeat !bg-cover !w-full !pt-[540px] relative" style="background-image: url({{image_url}}) !important;">
-                <div class="grid grid-cols-1 lg:grid-cols-2 absolute inset-0 z-10 pt-20 pb-24 container mx-auto">
+            <div class="!bg-center !bg-no-repeat !bg-cover !w-full pt-[400px] xl:!pt-[540px] relative" style="background-image: url({{image_url}}) !important;">
+                <div class="grid grid-cols-1 lg:grid-cols-2 absolute inset-0 z-10 px-5 md:px-0 py-8 xl:pt-20 xl:pb-24 container mx-auto">
                     <div class="h-full flex flex-col justify-center to-right show-on-scroll">
                         {% set langCode = node.block_content_field_data_langcode %}
-                        <h1 class="text-4xl text-primary font-bold mb-6">{{ node._entity.getTranslation(langCode).field_title.value }}</h1>
-                        <p class="text-xl pl-8 border-l-4 border-primary">{{node._entity.getTranslation(langCode).field_content.value}}</p>
+                        <h1 class="text-2xl xl:text-4xl text-primary font-bold mb-6">{{ node._entity.getTranslation(langCode).field_title.value }}</h1>
+                        <p class="text-base xl:text-xl pl-8 border-l-4 border-primary">{{node._entity.getTranslation(langCode).field_content.value}}</p>
                     </div>
                 </div>
             </div>
