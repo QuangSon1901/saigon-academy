@@ -3,6 +3,7 @@
         {% for row in rows %}
             {% set node = row['#row'] %}
             {% set image_url = file_url(node._entity.field_image_admissions.entity.fileuri) %}
+            {% set langCode = node.node_field_data_langcode %}
             <a href="{{  url('entity.node.canonical', {'node': node.nid})  }}"  class="box-shadow-style cursor-pointer admissions-item">
                 <div>
                     <div class="float-left relative">
@@ -15,14 +16,20 @@
                     </div>
                     <div class="p-5 overflow-hidden">
                         <div>
-                            <h1 class="text-xl font-medium mb-6">{{node._entity.title.value}}</h1>
+                            <h1 class="text-xl font-medium mb-6">{{node._entity.getTranslation(langCode).title.value}}</h1>
                         </div>
                         <span class="text-textColor font-medium flex items-center">
                             <svg class="svg-icon mr-2" style="width: 1rem; height: 1rem;vertical-align: middle;fill: #FDC800;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M25.554944 971.99616c0 22.55872 27.7504 51.110912 51.110912 51.110912l868.87936 0c23.358464 0 51.110912-28.552192 51.110912-51.110912l0-664.41216L25.554944 307.584 25.554944 971.99616zM383.32928 460.915712l306.663424 0 0 102.196224L536.660992 920.860672l-102.221824 0L587.77088 563.111936 383.32928 563.111936 383.32928 460.915712zM945.545216 103.141376 792.213504 103.141376l0-102.247424-102.221824 0L689.99168 103.141376 332.218368 103.141376l0-102.247424-102.2208 0L229.997568 103.141376 76.665856 103.141376c-23.360512 0-51.110912 28.548096-51.110912 51.08224l0 102.224896 971.101184 0 0-92.015616C996.656128 141.923328 983.277568 103.141376 945.545216 103.141376z"  /></svg>
                             {{node._entity.field_admission_date_start.value|date('d-m-Y')}}
                         </span>
-                        <div style="display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;" class="text-black overflow-hidden font-normal">{{node._entity.field_intro.value}}</div>
-                        <button class="relative mt-3 h-[42px] text-white flex items-center font-medium rounded-full p-[13px] bg-primary">Đăng ký ngay</button>
+                        <div style="display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;" class="text-black overflow-hidden font-normal">{{node._entity.getTranslation(langCode).field_intro.value}}</div>
+                        <button class="relative mt-3 h-[42px] text-white flex items-center font-medium rounded-full p-[13px] bg-primary">
+                            {% if langCode == "vi" %}
+                                Đăng ký ngay
+                            {% else %}
+                                Register now
+                            {% endif %}
+                        </button>
                     </div>
                 </div>
             </a>
