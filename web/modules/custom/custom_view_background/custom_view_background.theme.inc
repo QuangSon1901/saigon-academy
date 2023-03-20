@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\image\Entity\ImageStyle;
+
 function template_preprocess_views_custom_view_background(&$variables)
 {
     $variables['#attached']['library'][] = 'custom_view_background/custom_view_background';

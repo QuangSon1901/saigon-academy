@@ -1,6 +1,6 @@
 body {
     overflow-x: hidden;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 }
 
 html ::-webkit-scrollbar {
@@ -450,25 +450,38 @@ html ::-webkit-scrollbar-track {
 
     .news-home-row,
     .row-footer-style,
-    .why-choose-block-row  {
+    .why-choose-block-row {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    
+    .node--type-news .layout--onecol:nth-child(2) .layout__region--content,
+    .node--type-admissions .layout--onecol:nth-child(2) .layout__region--content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .node--type-news .layout--onecol:nth-child(2) .layout__region--content>*+*, .node--type-admissions .layout--onecol:nth-child(2) .layout__region--content>*+* {
+        margin-left: 0;
+    }
+
+    .node--type-news .layout--onecol:nth-child(2) .layout__region--content .field ,
+    .node--type-admissions .layout--onecol:nth-child(2) .layout__region--content .field  {
+        font-size: 1rem !important;
+    }
+
+    .node--type-news .layout--onecol:nth-child(2) .layout__region--content svg ,
+    .node--type-admissions .layout--onecol:nth-child(2) .layout__region--content svg  {
+        width: 1rem !important;
+        height: 1rem !important;
+    }
 }
 
 
 @media only screen and (max-width: 640px) {
+
     .news-home-row,
     .row-footer-style,
     .why-choose-block-row {
         grid-template-columns: repeat(1, 1fr);
     }
 }
-
-
-
-
-
-
-

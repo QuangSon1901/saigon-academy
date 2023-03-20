@@ -2,12 +2,18 @@
   <div class="grid grid-cols-1 gap-12">
         {% for row in rows %}
             {% set node = row['#row'] %}
-            {% set image_url = file_url(node._entity.field_map_i.entity.fileuri) %}
             {% set langCode = node.node_field_data_langcode %}
             <div  class="box-shadow-style">
                 <div>
                     <div class="float-left relative">
-                        <img src="{{image_url}}" alt="" class="h-[360px] w-[680px] rounded-md object-cover"/>
+                        {% set imagestyle = {
+                            '#theme':      'image_style',
+                            '#style_name': 'convert_to_web',
+                            '#uri':        node._entity.field_map_i.entity.fileuri,
+                            '#alt':        node._entity.field_map_i.alt,
+                            '#attributes': { class: 'h-[360px] md:w-[280px] lg:w-[680px] w-[680px] rounded-md object-cover' },
+                        } %}
+                        {{ imagestyle }}
                     </div>
                     <div class="p-5 overflow-hidden">
                         <div>

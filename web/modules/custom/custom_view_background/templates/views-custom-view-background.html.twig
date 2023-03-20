@@ -3,10 +3,18 @@
         {% for row in rows %}
             {% set node = row['#row'] %}
             {% set langCode = node.node_field_data_langcode %}
-            {% set image_url = file_url(node._entity.field_image_edu.entity.fileuri) %}
             <a href="{{  url('entity.node.canonical', {'node': node.nid})  }}" class="to-top show-on-scroll">
                 <div class="tag-hover relative rounded-xl min-h-[210px] xl:min-h-[250px] flex items-center justify-center">
-                    <div class="absolute inset-0 rounded-xl truncate"><img src="{{image_url}}" class="w-full h-full transition-all !duration-1000 !ease-out"/></div>
+                    <div class="absolute inset-0 rounded-xl truncate">
+                        {% set imagestyle = {
+                            '#theme':      'image_style',
+                            '#style_name': 'convert_to_web',
+                            '#uri':        node._entity.field_image_edu.entity.fileuri,
+                            '#alt':        node._entity.field_image_edu.alt,
+                            '#attributes': { class: 'w-full h-full transition-all !duration-1000 !ease-out' },
+                        } %}
+                        {{ imagestyle }}
+                    </div>
                     <div class="relative w-full h-full flex items-center justify-center z-10"><h1 class="text-xl text-white font-bold text-center" style="inline-size: 80%;">{{node._entity.getTranslation(langCode).title.value}}</h1></div>
                     <div class="overlay absolute inset-0 bg-black opacity-50 rounded-xl"></div>
                 </div>

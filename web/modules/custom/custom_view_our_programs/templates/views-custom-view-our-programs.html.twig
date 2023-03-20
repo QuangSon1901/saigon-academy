@@ -2,12 +2,18 @@
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-8 lg:gap-y-16">
         {% for row in rows %}
             {% set node = row['#row'] %}
-            {% set image_url = file_url(node._entity.field_image_edu.entity.fileuri) %}
             {% set langCode = node.node_field_data_langcode %}
             <a href="{{  url('entity.node.canonical', {'node': node.nid})  }}">
                 <div class="h-[200px] lg:h-[300px] flex box-shadow-style our-card cursor-pointer">
                 <div class="w-[40%]">
-                    <img src="{{image_url}}" alt="" class="h-[200px] lg:h-[300px] w-[270px] rounded-md lg:translate-y-[-30px] transition-all object-cover"/>
+                    {% set imagestyle = {
+                        '#theme':      'image_style',
+                        '#style_name': 'convert_to_web',
+                        '#uri':        node._entity.field_image_edu.entity.fileuri,
+                        '#alt':        node._entity.field_image_edu.alt,
+                        '#attributes': { class: 'h-[200px] lg:h-[300px] w-[270px] rounded-md lg:translate-y-[-30px] transition-all object-cover' },
+                    } %}
+                    {{ imagestyle }}
                 </div>
                 <div class="w-[60%] py-8 px-3">
                     <div>

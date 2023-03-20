@@ -1,13 +1,19 @@
 <div class="custom_view_news py-[50px]">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+  <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
         {% for row in rows %}
             {% set node = row['#row'] %}
-            {% set image_url = file_url(node._entity.field_image_news.entity.fileuri) %}
             {% set langCode = node.node_field_data_langcode %}
             <a href="{{  url('entity.node.canonical', {'node': node.nid})  }}"  class="box-shadow-style cursor-pointer">
                 <div>
                     <div class="relative">
-                        <img src="{{image_url}}" alt="" class="w-full h-[360px] rounded-md object-cover"/>
+                        {% set imagestyle = {
+                            '#theme':      'image_style',
+                            '#style_name': 'convert_to_web',
+                            '#uri':        node._entity.field_image_news.entity.fileuri,
+                            '#alt':        node._entity.field_image_news.alt,
+                            '#attributes': { class: 'w-full h-[360px] rounded-md object-cover' },
+                        } %}
+                        {{ imagestyle }}
                     </div>
                     <div class="p-5">
                         <div>
