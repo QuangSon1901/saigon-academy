@@ -84,23 +84,26 @@
             loop();
 
             // Sidebar
-            (sidebar = () => {
+            sidebar = () => {
                 const sidebarMenu = $('#sidebar-menu', context)
                 const overlaySidebar = $('#overlay-sidebar', context)
-                const sidebarToggle = $('#sidebar-toggle', context)
+                // const sidebarToggle = $('#sidebar-toggle', context)
 
-                sidebarToggle.click(() => {
-                    sidebarMenu.addClass('active')
-                    overlaySidebar.addClass('active')
-                })
+                // sidebarToggle.click(() => {
+                sidebarMenu.addClass('active')
+                overlaySidebar.addClass('active')
+                // })
 
                 overlaySidebar.click(() => {
                     sidebarMenu.removeClass('active')
                     overlaySidebar.removeClass('active')
                 })
+            }
+
+            (toggleMenu = () => {
+                const sidebarToggle = $('#sidebar-toggle', context)
+                sidebarToggle.click(sidebar)
             })()
-
-
         }
     };
 
