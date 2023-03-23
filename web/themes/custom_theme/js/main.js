@@ -2,14 +2,14 @@
     Drupal.behaviors.handleHeaderMenu = {
         attach: function (context, settings) {
             // 
-            // const loadingPage = $('#loadingPage', context)
-            // setTimeout(() => {
-            //     loadingPage.addClass('close')
-            //     $('body').css('overflow-y', 'overlay')
-            // }, 1000)
-            // setTimeout(() => {
-            //     loadingPage.css('display', 'none')
-            // }, 2000)
+            const loadingPage = $('#loadingPage', context)
+            setTimeout(() => {
+                loadingPage.addClass('close')
+                $('body').css('overflow-y', 'overlay')
+            }, 1000)
+            setTimeout(() => {
+                loadingPage.css('display', 'none')
+            }, 2000)
 
             // 
             const scrollToTopBtn = $("#scroll-to-top");
